@@ -43,6 +43,21 @@
       gap: 3rem;
       flex-wrap: wrap;
     }
+    .project-section {
+      width: 100%;
+      text-align: center;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .project-title {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+      cursor: pointer;
+    }
+    .project-title:hover {
+      color: #ff6f61;
+    }
     .contact-container {
       width: 100%;
       text-align: center;
@@ -77,21 +92,6 @@
       font-size: 1.2rem;
       color: #fff;
       margin-top: 1rem;
-    }
-    .project-section {
-      width: 100%;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 2rem;
-    }
-    .project-title {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      color: #fff;
-      cursor: pointer;
-    }
-    .project-title:hover {
-      color: #ff6f61;
     }
     .modal {
       display: none;
@@ -137,6 +137,20 @@
   </header>
 
   <main>
+    <!-- Projeler Bölümü -->
+    <div class="project-section">
+      <h2 class="project-title" id="groundGamingTitle">GroundGaming</h2>
+    </div>
+
+    <!-- Modal Penceresi -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close" id="closeModal">&times;</span>
+        <p>aaaaa</p>
+      </div>
+    </div>
+
+    <!-- İletişim Bölümü -->
     <div class="contact-container">
       <h2 class="contact-title">İletişim</h2>
       <p class="contact-info">Bana aşağıdaki sosyal medya hesaplarımdan ulaşabilirsiniz.</p>
@@ -151,21 +165,10 @@
       <p class="email-info"><i class="fas fa-envelope"></i> example@mail.com</p>
     </div>
 
-    <div class="project-section">
-      <h2 class="project-title" id="groundGamingTitle">GroundGaming</h2>
-    </div>
-
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="modal-close" id="closeModal">&times;</span>
-        <p>aaaaa</p>
-      </div>
-    </div>
-
   </main>
 
   <footer>
-    <p>&copy; 2025 İlkin Güzel. Tüm hakları saklıdır.</p>
+    
   </footer>
 
   <script>
