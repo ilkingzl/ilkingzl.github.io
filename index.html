@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>İlkin Güzel</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -12,6 +12,7 @@
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: 'Roboto', sans-serif;
       background: #121212;
@@ -20,22 +21,25 @@
       flex-direction: column;
       min-height: 100vh;
     }
+
     header {
       text-align: center;
       padding: 3rem 1rem;
       background-color: #181818;
     }
+
     header h1 {
       font-size: 3rem;
       font-weight: 500;
       margin-bottom: 0.5rem;
-      font-family: 'Poppins', sans-serif;
     }
+
     header p.quote {
       font-size: 1.2rem;
       font-style: italic;
       color: #888;
     }
+
     main {
       display: flex;
       flex: 1;
@@ -44,6 +48,7 @@
       gap: 3rem;
       flex-wrap: wrap;
     }
+
     .section {
       width: 100%;
       text-align: center;
@@ -52,50 +57,61 @@
       background: #1f1f1f;
       border-radius: 8px;
     }
+
     .section-title {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
       color: #fff;
       font-weight: 700;
       font-family: 'Poppins', sans-serif;
+      cursor: pointer;
     }
-    .project-title, .info-title {
+
+    .section-title:hover {
+      color: #ff6f61;
+    }
+
+    .project-title {
       font-size: 2.2rem;
       margin-bottom: 1rem;
       color: #fff;
       cursor: pointer;
-      font-family: 'Poppins', sans-serif;
     }
-    .project-title:hover, .info-title:hover {
+
+    .project-title:hover {
       color: #ff6f61;
     }
+
     .contact-info {
       font-size: 1.1rem;
       color: #bbb;
       margin-bottom: 1.5rem;
-      font-family: 'Poppins', sans-serif;
     }
+
     .social-links {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
       flex-wrap: wrap;
     }
+
     .social-links a {
       color: #fff;
       font-size: 2rem;
       text-decoration: none;
       transition: color 0.3s ease;
     }
+
     .social-links a:hover {
       color: #ff6f61;
     }
+
     .email-info {
       font-size: 1.2rem;
       color: #fff;
       margin-top: 1rem;
-      font-family: 'Poppins', sans-serif;
     }
+
     .modal {
       display: none;
       position: fixed;
@@ -108,6 +124,7 @@
       justify-content: center;
       align-items: center;
     }
+
     .modal-content {
       background-color: #333;
       padding: 2rem;
@@ -115,8 +132,8 @@
       width: 70%;
       max-width: 500px;
       color: #fff;
-      position: relative;
     }
+
     .modal-close {
       color: #fff;
       font-size: 1.5rem;
@@ -125,6 +142,7 @@
       top: 10px;
       right: 10px;
     }
+
     footer {
       text-align: center;
       padding: 1.5rem;
@@ -132,6 +150,7 @@
       color: #aaa;
       background: #181818;
     }
+
   </style>
 </head>
 <body>
@@ -143,16 +162,15 @@
   <main>
     <!-- Ben Kimim Bölümü -->
     <div class="section">
-      <h2 class="section-title">Ben Kimim</h2>
-      <h3 class="info-title" id="aboutMeTitle">Hakkımda</h3>
+      <h2 class="section-title" id="aboutMeTitle">Ben Kimim</h2>
+      <div id="aboutMeInfo" style="display: none;">
+        <p>Burada hakkımda bilgiler yer alacak.</p>
+      </div>
     </div>
 
     <!-- Projeler Bölümü -->
     <div class="section">
-      <h2 class="section-title">Öne Çıkan Projelerim</h2>
-      <div class="project-section">
-        <h3 class="project-title" id="groundGamingTitle">GroundGaming</h3>
-      </div>
+      <h2 class="section-title" id="groundGamingTitle">GroundGaming</h2>
     </div>
 
     <!-- İletişim Bölümü -->
@@ -171,13 +189,14 @@
         <p class="email-info"><i class="fas fa-envelope"></i> example@mail.com</p>
       </div>
     </div>
+
   </main>
 
   <footer>
     <p>&copy; 2025 İlkin Güzel. Tüm hakları saklıdır.</p>
   </footer>
 
-  <!-- Modal Pencereleri -->
+  <!-- Modal: GroundGaming -->
   <div id="myModal" class="modal">
     <div class="modal-content">
       <span class="modal-close" id="closeModal">&times;</span>
@@ -185,6 +204,7 @@
     </div>
   </div>
 
+  <!-- Modal: Ben Kimim -->
   <div id="aboutMeModal" class="modal">
     <div class="modal-content">
       <span class="modal-close" id="closeAboutModal">&times;</span>
@@ -193,7 +213,7 @@
   </div>
 
   <script>
-    // GroundGaming Modal
+    // GroundGaming modal
     const modal = document.getElementById('myModal');
     const projectTitle = document.getElementById('groundGamingTitle');
     const closeModal = document.getElementById('closeModal');
@@ -206,25 +226,16 @@
       modal.style.display = "none";
     }
 
-    // About Me Modal
-    const aboutModal = document.getElementById('aboutMeModal');
+    // Ben Kimim modal
     const aboutTitle = document.getElementById('aboutMeTitle');
-    const closeAbout = document.getElementById('closeAboutModal');
+    const aboutMeInfo = document.getElementById('aboutMeInfo');
 
     aboutTitle.onclick = function() {
-      aboutModal.style.display = "flex";
-    }
-
-    closeAbout.onclick = function() {
-      aboutModal.style.display = "none";
-    }
-
-    // Modal dışına tıklayınca kapanma
-    window.onclick = function(event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      } else if (event.target === aboutModal) {
-        aboutModal.style.display = "none";
+      // Tıklanınca bilgi kısmını göster
+      if (aboutMeInfo.style.display === "none") {
+        aboutMeInfo.style.display = "block";
+      } else {
+        aboutMeInfo.style.display = "none";
       }
     }
   </script>
