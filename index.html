@@ -178,9 +178,9 @@
 
     <!-- Projeler Bölümü -->
     <div class="section">
-      <h2 class="section-title">Öne Çıkan Projelerim</h2>
-      <div class="project-section">
-        <h3 class="project-title" id="groundGamingTitle">GroundGaming</h3>
+      <h2 class="section-title" id="projelerimTitle">Projelerim</h2>
+      <div id="projectInfo" class="hidden">
+        <h3 class="project-title">GroundGaming</h3>
       </div>
     </div>
 
@@ -245,6 +245,18 @@
       } else {
         infoDiv.classList.remove("visible");
         infoDiv.classList.add("hidden");
+      }
+    });
+
+    // Projelerim başlığı tıklanabilir işlevi
+    document.getElementById("projelerimTitle").addEventListener("click", function() {
+      var projectDiv = document.getElementById("projectInfo");
+      if (projectDiv.classList.contains("hidden")) {
+        projectDiv.classList.remove("hidden");
+        projectDiv.classList.add("visible");
+      } else {
+        projectDiv.classList.remove("visible");
+        projectDiv.classList.add("hidden");
       }
     });
   </script>
