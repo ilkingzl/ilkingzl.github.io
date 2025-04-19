@@ -52,6 +52,16 @@
       font-size: 2.2rem;
       margin-bottom: 1rem;
       color: #fff;
+      cursor: pointer; /* Tıklanabilir işaret */
+      display: inline-flex;
+      align-items: center;
+    }
+    .contact-title i {
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+    }
+    .contact-title.open i {
+      transform: rotate(180deg); /* Başlık tıklandığında ok dönüşü */
     }
     .contact-info {
       font-size: 1.1rem;
@@ -85,6 +95,9 @@
       color: #aaa;
       background: #181818;
     }
+    .social-section {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -95,22 +108,35 @@
 
   <main>
     <div class="contact-container">
-      <h2 class="contact-title">Communication and Social Media</h2>
+      <h2 class="contact-title" id="toggle-social">Communication and Social Media
+        <i class="fas fa-chevron-down"></i>
+      </h2>
       <p class="contact-info"></p>
 
-      <div class="social-links">
-        <a href="https://instagram.com/ilkingzl" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/gzllkn" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://tiktok.com/@gzllkn" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://github.com/ilkingzl" target="_blank"><i class="fab fa-github"></i></a>
+      <div class="social-section" id="social-section">
+        <div class="social-links">
+          <a href="https://instagram.com/ilkingzl" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/gzllkn" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://tiktok.com/@gzllkn" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://github.com/ilkingzl" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <p class="email-info"><i class="fas fa-envelope"></i> example@mail.com</p>
       </div>
-
-      <p class="email-info"><i class="fas fa-envelope"></i> example@mail.com</p>
     </div>
   </main>
 
   <footer>
     <p></p>
   </footer>
+
+  <script>
+    document.getElementById("toggle-social").addEventListener("click", function () {
+      const section = document.getElementById("social-section");
+      section.style.display = section.style.display === "none" ? "block" : "none";
+      
+      // Başlık simgesini döndür
+      this.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
