@@ -14,89 +14,98 @@
     }
     body {
       font-family: 'Roboto', sans-serif;
-      background: #0f0f0f;
-      color: #fff;
+      background: #121212;
+      color: #f1f1f1;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
     header {
       text-align: center;
-      padding: 2rem 1rem;
-      background-color: #1a1a1a;
-      border-bottom: 1px solid #ffffff10;
+      padding: 3rem 1rem;
+      background-color: #181818;
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 500;
+      margin-bottom: 0.5rem;
     }
     header p.quote {
+      font-size: 1.2rem;
       font-style: italic;
-      color: #bbb;
-      margin-top: 0.5rem;
+      color: #888;
     }
     main {
       display: flex;
       flex: 1;
       padding: 2rem;
-      gap: 2rem;
       justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
     }
     .column {
       flex: 1;
-      max-width: 500px;
+      min-width: 300px;
+      max-width: 400px;
     }
     .section-title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #ffffff10;
-      padding-bottom: 0.5rem;
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
       color: #fff;
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.5rem;
     }
     .project {
       background: #1a1a1a;
-      padding: 1rem;
+      padding: 1.5rem;
       border-radius: 8px;
-      margin-bottom: 1rem;
-      border-left: 3px solid #ffffff20;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #ff6f61;
     }
     .project h3 {
-      margin: 0 0 0.5rem;
+      font-size: 1.4rem;
+      color: #ff6f61;
+      margin-bottom: 0.8rem;
     }
     .contact-links {
       display: flex;
       flex-direction: column;
-      gap: 0.8rem;
+      gap: 1rem;
+      text-align: center;
     }
     .contact-links a {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      background: #ffffff08;
-      padding: 0.6rem 1rem;
+      justify-content: center;
+      gap: 0.8rem;
+      background: #333;
+      padding: 0.8rem 1.5rem;
       border-radius: 6px;
-      color: #fff;
+      color: #f1f1f1;
       text-decoration: none;
-      transition: background 0.3s;
+      transition: background 0.3s ease;
     }
     .contact-links a:hover {
-      background: #ffffff15;
+      background: #444;
     }
     .contact-links i {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
     .contact-static {
-      padding: 0.6rem 1rem;
-      background: #222;
+      padding: 0.8rem 1.5rem;
+      background: #333;
       border-radius: 6px;
       color: #aaa;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      text-align: center;
     }
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       font-size: 0.9rem;
-      color: #666;
+      color: #aaa;
+      background: #181818;
     }
   </style>
 </head>
@@ -110,13 +119,13 @@
     <div class="column">
       <h2 class="section-title">İletişim</h2>
       <div class="contact-links">
-        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://twitter.com/" target="_blank"><i class="fab fa-x-twitter"></i> X</a>
-        <a href="https://tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-        <a class="contact-static"><i class="fas fa-envelope"></i> example@mail.com</a>
+        <a href="https://instagram.com/ilkingzl" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://twitter.com/gzllkn" target="_blank"><i class="fab fa-x-twitter"></i> X</a>
+        <a href="https://tiktok.com/gzllkn" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
         <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i> GitHub</a>
         <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://reddit.com/" target="_blank"><i class="fab fa-reddit"></i> Reddit</a>
+        <a class="contact-static"><i class="fas fa-envelope"></i> example@mail.com</a>
       </div>
     </div>
 
@@ -130,7 +139,7 @@
   </main>
 
   <footer>
-    
+    <p>&copy; 2025 İlkin Güzel. Tüm hakları saklıdır.</p>
   </footer>
 </body>
 </html>
