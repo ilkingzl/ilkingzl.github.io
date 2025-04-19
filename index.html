@@ -78,6 +78,49 @@
       color: #fff;
       margin-top: 1rem;
     }
+    .project-section {
+      width: 100%;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    .project-title {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+      cursor: pointer;
+    }
+    .project-title:hover {
+      color: #ff6f61;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background-color: #333;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 70%;
+      max-width: 500px;
+      color: #fff;
+    }
+    .modal-close {
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
     footer {
       text-align: center;
       padding: 1.5rem;
@@ -103,16 +146,48 @@
         <a href="https://twitter.com/gzllkn" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="https://tiktok.com/gzllkn" target="_blank"><i class="fab fa-tiktok"></i></a>
         <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://reddit.com/" target="_blank"><i class="fab fa-reddit"></i></a>
       </div>
 
       <p class="email-info"><i class="fas fa-envelope"></i> example@mail.com</p>
     </div>
+
+    <div class="project-section">
+      <h2 class="project-title" id="groundGamingTitle">GroundGaming</h2>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close" id="closeModal">&times;</span>
+        <p>aaaaa</p>
+      </div>
+    </div>
+
   </main>
 
   <footer>
     <p>&copy; 2025 İlkin Güzel. Tüm hakları saklıdır.</p>
   </footer>
+
+  <script>
+    // Modal göster ve gizle
+    const modal = document.getElementById('myModal');
+    const projectTitle = document.getElementById('groundGamingTitle');
+    const closeModal = document.getElementById('closeModal');
+
+    projectTitle.onclick = function() {
+      modal.style.display = "flex";
+    }
+
+    closeModal.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // Modal dışına tıklanırsa kapanması
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
