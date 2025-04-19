@@ -126,6 +126,15 @@
       color: #aaa;
       background: #181818;
     }
+    /* Yeni stil: gizli içerik */
+    .hidden {
+      display: none;
+    }
+    .clickable {
+      color: #ff6f61;
+      cursor: pointer;
+      font-size: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -135,6 +144,15 @@
   </header>
 
   <main>
+    <!-- Ben Kimim Bölümü -->
+    <div class="section">
+      <h2 class="section-title">Ben Kimim</h2>
+      <p class="clickable" id="toggleInfo">Tıklayın</p>
+      <div id="info" class="hidden">
+        <p>bbbbb</p>
+      </div>
+    </div>
+
     <!-- Projeler Bölümü -->
     <div class="section">
       <h2 class="section-title">Öne Çıkan Projelerim</h2>
@@ -194,6 +212,16 @@
         modal.style.display = "none";
       }
     }
+
+    // Ben Kimim tıklanabilir işlevi
+    document.getElementById("toggleInfo").addEventListener("click", function() {
+      var infoDiv = document.getElementById("info");
+      if (infoDiv.classList.contains("hidden")) {
+        infoDiv.classList.remove("hidden");
+      } else {
+        infoDiv.classList.add("hidden");
+      }
+    });
   </script>
 </body>
 </html>
