@@ -95,8 +95,18 @@
       color: #aaa;
       background: #181818;
     }
+
+    /* Slide-in Animasyonu */
     .social-section {
       display: none;
+      transform: translateY(-20px);
+      opacity: 0;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+    .social-section.show {
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
     }
   </style>
 </head>
@@ -132,9 +142,7 @@
   <script>
     document.getElementById("toggle-social").addEventListener("click", function () {
       const section = document.getElementById("social-section");
-      section.style.display = section.style.display === "none" ? "block" : "none";
-      
-      // Başlık simgesini döndür
+      section.classList.toggle("show");
       this.classList.toggle('open');
     });
   </script>
