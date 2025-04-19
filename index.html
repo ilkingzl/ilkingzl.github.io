@@ -239,37 +239,22 @@
     // Ben Kimim başlığı tıklanabilir işlevi
     document.getElementById("benKimimTitle").addEventListener("click", function() {
       var infoDiv = document.getElementById("info");
-      if (infoDiv.classList.contains("hidden")) {
-        infoDiv.classList.remove("hidden");
-        infoDiv.classList.add("visible");
-      } else {
-        infoDiv.classList.remove("visible");
-        infoDiv.classList.add("hidden");
-      }
+      infoDiv.classList.toggle("hidden");
+      infoDiv.classList.toggle("visible");
     });
 
     // Projelerim başlığı tıklanabilir işlevi
     document.getElementById("projelerimTitle").addEventListener("click", function() {
       var projectDiv = document.getElementById("projectInfo");
-      if (projectDiv.classList.contains("hidden")) {
-        projectDiv.classList.remove("hidden");
-        projectDiv.classList.add("visible");
-      } else {
-        projectDiv.classList.remove("visible");
-        projectDiv.classList.add("hidden");
-      }
+      projectDiv.classList.toggle("hidden");
+      projectDiv.classList.toggle("visible");
     });
 
     // Bana Ulaşın başlığı tıklanabilir işlevi
     document.getElementById("banaUlasinTitle").addEventListener("click", function() {
       var contactDiv = document.getElementById("contactInfo");
-      if (contactDiv.classList.contains("hidden")) {
-        contactDiv.classList.remove("hidden");
-        contactDiv.classList.add("visible");
-      } else {
-        contactDiv.classList.remove("visible");
-        contactDiv.classList.add("hidden");
-      }
+      contactDiv.classList.toggle("hidden");
+      contactDiv.classList.toggle("visible");
     });
   </script>
 </body>
