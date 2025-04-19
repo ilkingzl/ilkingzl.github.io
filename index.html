@@ -43,11 +43,19 @@
       gap: 3rem;
       flex-wrap: wrap;
     }
-    .project-section {
+    .section {
       width: 100%;
       text-align: center;
       padding: 2rem;
       margin-bottom: 2rem;
+      background: #1f1f1f;
+      border-radius: 8px;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+      font-weight: 700;
     }
     .project-title {
       font-size: 2.2rem;
@@ -57,16 +65,6 @@
     }
     .project-title:hover {
       color: #ff6f61;
-    }
-    .contact-container {
-      width: 100%;
-      text-align: center;
-      padding: 2rem;
-    }
-    .contact-title {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      color: #fff;
     }
     .contact-info {
       font-size: 1.1rem;
@@ -86,7 +84,7 @@
       transition: color 0.3s ease;
     }
     .social-links a:hover {
-      color: #ff6f61; /* Hover rengi */
+      color: #ff6f61;
     }
     .email-info {
       font-size: 1.2rem;
@@ -138,8 +136,11 @@
 
   <main>
     <!-- Projeler Bölümü -->
-    <div class="project-section">
-      <h2 class="project-title" id="groundGamingTitle">GroundGaming</h2>
+    <div class="section">
+      <h2 class="section-title">Projeler</h2>
+      <div class="project-section">
+        <h3 class="project-title" id="groundGamingTitle">GroundGaming</h3>
+      </div>
     </div>
 
     <!-- Modal Penceresi -->
@@ -151,24 +152,26 @@
     </div>
 
     <!-- İletişim Bölümü -->
-    <div class="contact-container">
-      <h2 class="contact-title">Communication and Social Media</h2>
-      <p class="contact-info"></p>
+    <div class="section">
+      <h2 class="section-title">İletişim ve Sosyal Medya</h2>
+      <div class="contact-container">
+        <p class="contact-info">E-posta: example@mail.com</p>
 
-      <div class="social-links">
-        <a href="https://instagram.com/ilkingzl" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/gzllkn" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.tiktok.com/@gzllkn" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://github.com/ilkingzl" target="_blank"><i class="fab fa-github"></i></a>
+        <div class="social-links">
+          <a href="https://instagram.com/ilkingzl" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/gzllkn" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.tiktok.com/@gzllkn" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://github.com/ilkingzl" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+
+        <p class="email-info"><i class="fas fa-envelope"></i> example@mail.com</p>
       </div>
-
-      <p class="email-info"><i class="fas fa-envelope"></i> example@mail.com</p>
     </div>
 
   </main>
 
   <footer>
-    
+    <p>&copy; 2025 İlkin Güzel. Tüm hakları saklıdır.</p>
   </footer>
 
   <script>
