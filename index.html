@@ -52,21 +52,25 @@
       font-size: 2.2rem;
       margin-bottom: 1rem;
       color: #fff;
-      cursor: pointer; /* Tıklanabilir işaret */
-      display: inline-flex;
-      align-items: center;
+      cursor: pointer;
     }
-    .contact-title i {
-      margin-left: 10px;
-      transition: transform 0.3s ease;
+    .content {
+      display: none;
+      margin-top: 10px;
+      color: #555;
     }
-    .contact-title.open i {
-      transform: rotate(180deg); /* Başlık tıklandığında ok dönüşü */
+    .toggle-btn {
+      background-color: #3498db;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      margin: 10px 0;
+      border: none;
+      width: 100%;
     }
-    .contact-info {
-      font-size: 1.1rem;
-      color: #bbb;
-      margin-bottom: 1.5rem;
+    .toggle-btn:hover {
+      background-color: #2980b9;
     }
     .social-links {
       display: flex;
@@ -81,7 +85,7 @@
       transition: color 0.3s ease;
     }
     .social-links a:hover {
-      color: #ff6f61; /* Hover rengi */
+      color: #ff6f61;
     }
     .email-info {
       font-size: 1.2rem;
@@ -95,19 +99,6 @@
       color: #aaa;
       background: #181818;
     }
-
-    /* Slide-in Animasyonu */
-    .social-section {
-      display: none;
-      transform: translateY(-20px);
-      opacity: 0;
-      transition: transform 0.5s ease, opacity 0.5s ease;
-    }
-    .social-section.show {
-      display: block;
-      transform: translateY(0);
-      opacity: 1;
-    }
   </style>
 </head>
 <body>
@@ -118,12 +109,24 @@
 
   <main>
     <div class="contact-container">
-      <h2 class="contact-title" id="toggle-social">Communication and Social Media
-        <i class="fas fa-chevron-down"></i>
-      </h2>
-      <p class="contact-info"></p>
+      <!-- Ben Kimim? Başlığı -->
+      <h2 class="contact-title" onclick="toggleContent('about')">Ben Kimim?</h2>
+      <div id="about" class="content">
+        <p>aaaaa</p>
+      </div>
 
-      <div class="social-section" id="social-section">
+      <!-- Projeler Başlığı -->
+      <h2 class="contact-title" onclick="toggleContent('projects')">Projeler</h2>
+      <div id="projects" class="content">
+        <h3 class="contact-title" onclick="toggleContent('groundgaming')">GroundGaming</h3>
+        <div id="groundgaming" class="content">
+          <p>bbbbb</p>
+        </div>
+      </div>
+
+      <!-- Communication and Social Media Başlığı -->
+      <h2 class="contact-title" onclick="toggleContent('communication')">Communication and Social Media</h2>
+      <div id="communication" class="content">
         <div class="social-links">
           <a href="https://instagram.com/ilkingzl" target="_blank"><i class="fab fa-instagram"></i></a>
           <a href="https://twitter.com/gzllkn" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -140,11 +143,10 @@
   </footer>
 
   <script>
-    document.getElementById("toggle-social").addEventListener("click", function () {
-      const section = document.getElementById("social-section");
-      section.classList.toggle("show");
-      this.classList.toggle('open');
-    });
+    function toggleContent(id) {
+      var content = document.getElementById(id);
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
   </script>
 </body>
 </html>
