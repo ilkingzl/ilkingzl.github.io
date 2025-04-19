@@ -146,8 +146,7 @@
   <main>
     <!-- Ben Kimim Bölümü -->
     <div class="section">
-      <h2 class="section-title">Ben Kimim</h2>
-      <p class="clickable" id="toggleInfo">Ben Kimim</p>
+      <h2 class="section-title" id="benKimimTitle">Ben Kimim</h2>
       <div id="info" class="hidden">
         <p>bbbbb</p>
       </div>
@@ -213,8 +212,8 @@
       }
     }
 
-    // Ben Kimim tıklanabilir işlevi
-    document.getElementById("toggleInfo").addEventListener("click", function() {
+    // Ben Kimim başlığı tıklanabilir işlevi
+    document.getElementById("benKimimTitle").addEventListener("click", function() {
       var infoDiv = document.getElementById("info");
       if (infoDiv.classList.contains("hidden")) {
         infoDiv.classList.remove("hidden");
