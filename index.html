@@ -1,108 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Squash the Bug!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aıdm İlkin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: #fefefe;
-      font-family: sans-serif;
+      font-family: 'Roboto', sans-serif;
+      background: #1e1e2f;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      padding: 2rem;
       text-align: center;
+      background: #292943;
     }
-
-    #bug {
-      position: absolute;
-      font-size: 40px;
-      cursor: pointer;
-      transition: transform 0.1s ease;
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
-
-    #scoreboard {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 24px;
-      background: #000000aa;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 12px;
+    header p.quote {
+      font-style: italic;
+      color: #aaa;
     }
-
-    #startBtn {
-      position: absolute;
-      top: 100px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 18px;
-      padding: 10px 20px;
-      background-color: #4caf50;
-      color: white;
-      border: none;
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #ffc107;
+    }
+    .project {
+      background: #2f2f4f;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .contact-links a {
+      display: inline-block;
+      margin: 0.4rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 8px;
-      cursor: pointer;
+      background: #ffc107;
+      color: #000;
+      text-decoration: none;
+      transition: background 0.3s;
     }
-
-    #startBtn:hover {
-      background-color: #45a049;
+    .contact-links a:hover {
+      background: #e0a800;
+    }
+    footer {
+      text-align: center;
+      margin: 3rem 0 1rem;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Aıdm İlkin</h1>
+    <p class="quote">"Hayat bir oyun ve kodlarını ben yazıyorum"</p>
+  </header>
 
-<div id="scoreboard">Skor: 0 | Süre: 10</div>
-<button id="startBtn">Oyuna Başla</button>
-<div id="bug" style="display: none;">🐞</div>
+  <section>
+    <h2 class="section-title">Projeler</h2>
+    <div class="project">
+      <h3>GroundGaming</h3>
+      <p>Oyun odaklı içerikler, geliştirmeler ve topluluk projeleri üzerine.</p>
+    </div>
+  </section>
 
-<script>
-  const bug = document.getElementById("bug");
-  const scoreboard = document.getElementById("scoreboard");
-  const startBtn = document.getElementById("startBtn");
+  <section>
+    <h2 class="section-title">İletişim</h2>
+    <div class="contact-links">
+      <a href="#">Instagram</a>
+      <a href="#">X (Twitter)</a>
+      <a href="#">TikTok</a>
+      <a href="mailto:example@mail.com">Mail</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Reddit</a>
+    </div>
+  </section>
 
-  let score = 0;
-  let timeLeft = 10;
-  let gameInterval;
-  let moveInterval;
-
-  function moveBug() {
-    const x = Math.random() * (window.innerWidth - 50);
-    const y = Math.random() * (window.innerHeight - 50);
-    bug.style.left = `${x}px`;
-    bug.style.top = `${y}px`;
-  }
-
-  bug.addEventListener("click", () => {
-    score++;
-    bug.style.transform = "scale(0.8)";
-    setTimeout(() => bug.style.transform = "scale(1)", 100);
-    scoreboard.textContent = `Skor: ${score} | Süre: ${timeLeft}`;
-  });
-
-  startBtn.addEventListener("click", () => {
-    score = 0;
-    timeLeft = 10;
-    scoreboard.textContent = `Skor: ${score} | Süre: ${timeLeft}`;
-    startBtn.style.display = "none";
-    bug.style.display = "block";
-    moveBug();
-    moveInterval = setInterval(moveBug, 600);
-    gameInterval = setInterval(() => {
-      timeLeft--;
-      scoreboard.textContent = `Skor: ${score} | Süre: ${timeLeft}`;
-      if (timeLeft === 0) {
-        clearInterval(gameInterval);
-        clearInterval(moveInterval);
-        bug.style.display = "none";
-        startBtn.textContent = "Tekrar Oyna";
-        startBtn.style.display = "block";
-        alert(`Süre doldu! Skorun: ${score}`);
-      }
-    }, 1000);
-  });
-</script>
-
+  <footer>
+    &copy; 2025 Aıdm İlkin. Tüm hakları saklıdır.
+  </footer>
 </body>
 </html>
