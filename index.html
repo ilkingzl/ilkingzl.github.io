@@ -4,10 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>İlkin Güzel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
       --bg: #121212;
       --fg: #f1f1f1;
+      --accent: #ff6b6b;
+      --muted: #999;
       --font-main: 'Inter', sans-serif;
     }
 
@@ -21,13 +25,192 @@
       background-color: var(--bg);
       color: var(--fg);
       font-family: var(--font-main);
-      min-height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      cursor: pointer;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .section-title:hover::after {
+      width: 100%;
+    }
+
+    .section-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      margin-top: 0.5rem;
+    }
+
+    .section-content.open {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    .sub-title {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--accent);
+      transition: color 0.3s;
+    }
+
+    .sub-title:hover {
+      color: #ffffff;
+    }
+
+    .sub-content {
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      display: none;
+    }
+
+    .sub-content.open {
+      display: block;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: var(--fg);
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+    }
+
+    .email {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>İlkin Güzel</h1>
+    <p>"Life is a game and I write the codes"</p>
+  </header>
+
+  <main>
+    <!-- Who I Am -->
+    <div class="section">
+      <div class="section-title" onclick="toggleSection('kimim')">Who I Am?</div>
+      <div class="section-content" id="kimim">
+        <p>Hi</p>
+      </div>
+    </div>
+
+    <!-- Projects -->
+ <div class="section">
+      <div class="section-title" onclick="toggleSection('projeler')">Projects</div>
+      <div class="section-content" id="projeler">
+<div class="sub-title" onclick="toggleSub('lknstudio')">LKN Studio</div>
+        <div class="sub-content" id="lknstudio">
+          <p></p>
+        </div>
+        <div class="sub-title" onclick="toggleSub('groundgaming')">GroundGaming</div>
+        <div class="sub-content" id="groundgaming">
+          <p>A computer game company with two co-founders.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Sosyal Medya -->
+    <div class="section">
+      <div class="section-title" onclick="toggleSection('iletisim')">Communication and Social Media</div>
+      <div class="section-content" id="iletisim">
+        <div class="social-links">
+          <a href="https://www.instagram.com/ilkingzl" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/gzllkn" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://tiktok.com/@gzllkn" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://github.com/ilkingzl" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="email"><i class="fas fa-envelope"></i> ilkinguzel02@gmail.com</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 İlkin Güzel. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleSection(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('open');
+    }
+
+    function toggleSub(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
