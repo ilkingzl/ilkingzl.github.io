@@ -4,31 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yapım Aşamasında</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rubik&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #0e0e0e;
-      color: #ffffff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
       flex-direction: column;
+      color: #ffffff;
+      font-family: 'Rubik', sans-serif;
+      text-align: center;
+      overflow: hidden;
     }
 
-    .blink {
-      font-size: 1.5rem;
-      animation: blink 1s infinite;
+    .title {
+      font-size: 2.2rem;
+      white-space: nowrap;
+      border-right: 3px solid #fff;
+      width: 26ch;
+      animation: typing 3s steps(26) 1s 1 normal both, blinkCursor 0.7s infinite;
+      font-family: 'Orbitron', sans-serif;
     }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 26ch }
+    }
+
+    @keyframes blinkCursor {
+      from { border-color: #fff }
+      to { border-color: transparent }
+    }
+
+    .icon {
+      font-size: 2rem;
+      margin-top: 1rem;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #00ffe0; }
+      to { text-shadow: 0 0 20px #00ffe0; }
+    }
+
+    .btn {
+      margin-top: 2rem;
+      padding: 12px 24px;
+      background-color: #00ffe0;
+      color: #0f2027;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #00c2a9;
     }
   </style>
 </head>
 <body>
-  <div class="blink">🛠️ Site yapım aşamasında, sabrınız için teşekkürler!</div>
+  <div class="icon">🚧</div>
+  <div class="title">Bir sonraki levele hazırlanıyoruz...</div>
+  <a class="btn" href="https://instagram.com/kullaniciadi" target="_blank">Instagram'da Takip Et</a>
 </body>
 </html>
