@@ -1,76 +1,47 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yapım Aşamasında</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rubik&display=swap" rel="stylesheet">
+  <title>Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       height: 100vh;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background-color: #0d0d0d;
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-      color: #ffffff;
-      font-family: 'Rubik', sans-serif;
-      text-align: center;
-      overflow: hidden;
+      font-family: 'Orbitron', sans-serif;
+      color: #f1f1f1;
     }
 
-    .title {
+    .typing-text {
       font-size: 2.2rem;
       white-space: nowrap;
-      border-right: 3px solid #fff;
-      width: 26ch;
-      animation: typing 3s steps(26) 1s 1 normal both, blinkCursor 0.7s infinite;
-      font-family: 'Orbitron', sans-serif;
+      overflow: hidden;
+      border-right: 2px solid #f1f1f1;
+      width: 24ch;
+      animation: typing 3s steps(24) 1s forwards, blink 0.75s step-end infinite;
     }
 
     @keyframes typing {
       from { width: 0 }
-      to { width: 26ch }
+      to { width: 24ch }
     }
 
-    @keyframes blinkCursor {
-      from { border-color: #fff }
-      to { border-color: transparent }
-    }
-
-    .icon {
-      font-size: 2rem;
-      margin-top: 1rem;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 5px #00ffe0; }
-      to { text-shadow: 0 0 20px #00ffe0; }
-    }
-
-    .btn {
-      margin-top: 2rem;
-      padding: 12px 24px;
-      background-color: #00ffe0;
-      color: #0f2027;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #00c2a9;
+    @keyframes blink {
+      50% { border-color: transparent }
     }
   </style>
 </head>
 <body>
-  <div class="icon">🚧</div>
-  <div class="title">Bir sonraki levele hazırlanıyoruz...</div>
-  <a class="btn" href="https://instagram.com/kullaniciadi" target="_blank">Instagram'da Takip Et</a>
+  <div class="typing-text">We're building something awesome...</div>
 </body>
 </html>
