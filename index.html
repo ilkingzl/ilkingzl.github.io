@@ -1,16 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Coming Soon</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #000000;
-      height: 100vh;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yakında</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .hourglass {
+            width: 50px;
+            height: 80px;
+            border: 3px solid white;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sand {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 6px;
+            height: 0;
+            background: white;
+            animation: sandFlow 3s infinite;
+            transform: translateX(-50%);
+        }
+
+        @keyframes sandFlow {
+            0% { height: 0; }
+            50% { height: 100%; }
+            100% { height: 0; }
+        }
+
+        .text {
+            margin-top: 20px;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+    </style>
 </head>
 <body>
+    <div class="hourglass">
+        <div class="sand"></div>
+    </div>
+    <div class="text">Yakında</div>
 </body>
 </html>
